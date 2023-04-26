@@ -1,0 +1,19 @@
+{% extends "logged_in.html" %}
+
+{% block page_name %}
+<h2>Create Discussion Post</h2>
+<br>
+{% endblock %}
+
+{% block content %}
+<form method="POST" action="/create_discussion">
+    <label for="userTitle">Title of Discussion Post: </label>
+    <input type="text" id="userTitle" name="userTitle" maxlength="100">
+    <br>
+    <br>
+    <label for = userBody><title></title></label>
+    <textarea id="userBody" name="userBody" rows="4" cols="50", maxlength="3000" style="width: 1000px; height: 500px;"></textarea>
+    <br><br>
+    <input type='submit' value='Create Post'>
+</form>
+{% endblock %}

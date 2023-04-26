@@ -1,0 +1,32 @@
+{% extends "logged_in.html" %}
+
+{% block page_name %}
+<h2>Discussion Posts</h2>
+{% endblock %}
+
+{% block content %}
+<h2 style="font-weight:100; font-size: 25px;">These are the available discussion posts:</h2>
+<ul style="list-style-type:none;">
+    {% for post in discussion_list %}
+    <li> <a style="color: rgb(185, 28, 28);" href = "{{url_for('get_discussion_post', stored = post)}}">{{post}}</a> </li> <br>
+    {% endfor %}
+</ul>
+
+<form method="post" action="/discussion" enctype="multipart/form-data">
+    <style>
+        .button {
+          background-color: #0b150c;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        </style>
+    <a href = "/create_discussion"class="button">Create Discussion Post</a>
+</form>
+{% endblock %}

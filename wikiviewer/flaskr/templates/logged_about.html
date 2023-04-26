@@ -1,0 +1,46 @@
+{% extends "logged_in.html" %}
+
+{% block page_name %}
+<div align = 'center'>
+<h2>About</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div align = 'center'>
+    <h3>About this Wiki</h3>
+
+    <p>This wiki Museum stands as a home base for building a music community.<br>
+    Here we want to create an ecyclopedia of our users music interests so that they<br>
+    detemine what sounds define them. Any user is able to set up what is essentially<br>
+    a sub-wikipedia describing their music interests and it begins with our page authors.
+    </p>
+
+    <h3>Authors</h3>
+
+    <h4>Asis Johnson</h4>
+    <div>
+        <img src="data:image/jpeg;base64,{{ img1 }}"
+        width="400" 
+        height="500">
+    </div>
+    
+    <h4>Daniel Lucio</h4>
+    <div>
+        <img src="data:image/jpeg;base64,{{ img2 }}"
+        width="400" 
+        height="500">
+    </div>
+ 
+    <h4>Enrique Munoz</h4>
+    <div>
+        <img src="data:image/jpeg;base64,{{ img3 }}"
+        width="400" 
+        height="500">
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .msg {
+            color: midnightblue;
+        }
+
+        .topnav {
+            background-color: lightslategray;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: whitesmoke;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: slategrey;
+            color: whitesmoke;
+        }
+
+        .topnav a:active {
+            background-color: midnightblue;
+            color: whitesmoke;
+        }
+
+        body{
+            background-color: lightgrey;
+            font-size: 20px;
+        }
+
+        h1{
+            color: midnightblue;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        h4{
+            font-size: 16px;
+            font-weight: 100;
+        }
+    </style>
+    <title>Wiki Music Museum</title>
+    {% block navigation %}
+    <div class='topnav'>
+        <a href = "/">Home</a> <a href = "/pages">Pages</a> <a href= "/about">About</a> <a href = "/search">Search</a>
+        <a href = "/login">Login</a> <a href = "/signup">Sign Up</a> 
+    </div>
+    {% endblock %}
+
+    {% block search %}
+    <form action="/user_page" method = 'post'>
+    
+        <input id='user' name='user' type='text' />
+    
+        <input type='submit' value='search'>
+    </form>
+    {% endblock %}
+
+    <h1>Wiki Music Museum</h1>
+
+    {% block page_name%}{% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <div style="text-align: center; font-size: 135px; color: slategray;">       
+        Welcome to the Bitune Music Museum
+    </div>
+    {% endblock %}
+</body>
+
+</html>

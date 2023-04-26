@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+
+{% block page_name %}
+<h2 style="font-weight:100; font-size: 25px;">Museum Walls:</h2>
+{% endblock %}
+
+
+{% block content %}
+<ul style="list-style-type:none;">
+    {% for name in name_lst %}
+    <li> <a style="color: midnightblue;" href = "{{url_for('grabUploaded', stored = name)}}">{{name}}</a> </li> <br>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block navigation %}
+    <style>
+        .msg {
+            color: midnightblue;
+        }
+
+        .topnav {
+            background-color: lightslategray;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: whitesmoke;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: slategrey;
+            color: whitesmoke;
+        }
+
+        .topnav a.active {
+            background-color: midnightblue;
+            color: whitesmoke;
+        }
+
+        .topnav form {
+            float: right;
+            border: none;
+            margin-top: 8px;
+            margin-right: 16px;
+            padding: 6px;
+            font-size: 17px;
+        }
+    </style>
+    <div class='topnav'>
+        <a href = "/">Home</a> <a href = "/pages">Pages</a> <a href= "/about">About</a>
+        <a href = "/login">Login</a> <a href = "/signup">Sign Up</a> 
+        <form id="form">
+            <input type="search" id="keyword" placeholder="Search..." name="keyword">
+            <button>Submit</button>
+        </form>
+    </div>
+{% endblock %}

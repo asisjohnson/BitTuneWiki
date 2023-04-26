@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block page_name %}
+<div class='msg'>{{ msg }}</div>
+{% endblock %}
+
+
+{% block content %}
+<ul style="list-style-type:none;">
+    {% for name in valid_lst %}
+    <li> <a style="color: midnightblue;" href = "{{url_for('grabUploaded', stored = name)}}">{{name}}</a> </li> <br>
+    {% endfor %}
+</ul>
+{% endblock %}

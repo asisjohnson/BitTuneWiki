@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block page_name %}
+<h2 style="font-weight:100; font-size: 25px;">{{display_name}}</h2>
+{% endblock %}
+
+
+{% block content %}
+<ul style="list-style-type:none;">
+    {% for page in upl %}
+    <li> <a style="color: midnightblue;" href = "{{url_for('grabUploaded', stored = page)}}">{{page}}</a> </li> <br>
+    {% endfor %}
+</ul>
+{% endblock %}

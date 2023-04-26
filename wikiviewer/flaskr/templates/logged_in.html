@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+{% block navigation %}
+    <style>
+        .msg {
+            color: midnightblue;
+        }
+
+        .topnav {
+            background-color: lightslategray;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            color: whitesmoke;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: slategrey;
+            color: whitesmoke;
+        }
+
+        .topnav a.active {
+            background-color: midnightblue;
+            color: whitesmoke;
+        }
+    </style>
+    <div class='topnav'>
+        <a href = "/logged_in">Home</a> <a href = "/logged_pages">Pages</a> <a href= "/logged_about">About</a> 
+        <a href = "/upload">Upload</a> <a href = "/discussion">Discussion</a> <a href = "/logout">Logout</a>
+        <p style="font-size: 17px; text-align: right;">{{name}}</p>
+    </div>
+{% endblock %}
+
+{% block search %}
+<form action="/logged_user_page" method = 'post'>
+    
+    <input id='user' name='user' type='text' />
+    
+    <input type='submit' value='search'>
+</form>
+{% endblock %}
+
+
